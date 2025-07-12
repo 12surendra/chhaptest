@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chhap |</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <section id="header">
+        <div class="logo-container">
+        <a href="#"><img src="img/logo1.png" class="logo" style="height:80px;"alt=""></a></div>
+        <div class="search-container">
+            <div class="search-bar">
+                <svg class="search-icon" viewBox="0 0 24 24">
+                    <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                </svg>
+                <input type="text" placeholder="Search...">
+            </div>
+
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="explore.html">Explore</a></li>
+                <li><a href="creater.html">Creater</a></li>
+                <li><a class="active" href="design.html">Design</a></li>
+                <!-- <li><a href="contact.html">Contact</a></li>
+                <li id="lg-bag"><a href="cart.html"><i class="far fa-shopping-bag"></i></a></li>
+                <a href="#" id="close"><i class="far fa-times"></i></a> -->
+                <div class="nav-icons"></div>
+                    <li id="lg-bag"><a href="cart.html"><i class="fas fa-shopping-bag"></i></a></li>
+                    <a href="#" id="close"><i class="fas fa-times"></i></a>
+                    <div class="profile-container" style="margin-top: 6px;">
+                        <svg class="profile-icon" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                        </svg>
+                        <div class="profile-menu">
+                            <a href="login.html">Login</a>
+                            <a href="register.html">Register</a>
+                        </div>
+                    </div>
+                    <label class="theme-switch" for="theme-toggle">
+                    <input type="checkbox" id="theme-toggle">
+                    <div class="slider-icon">
+                        <i class="fas fa-sun sun-icon"></i>
+                        <i class="fas fa-moon moon-icon"></i>
+                        <div class="switch-indicator"></div>
+                    </div>
+                </label>
+                </div>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="cart.html"><i class="far fa-shopping-bag"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+
+    <section id="page-header" class="about-header">
+
+        <h2 class="animate-up">#Design With Us</h2>
+
+        <p class="animate-up delay"><span class="zoom-effect">Print Your Style</span> </p>
+
+    </section><br/>
+
+    <h3 style="color: #4b4b6a;
+      font-weight: 500;
+      margin-bottom: 30px; text-align: center;">START DESIGNING</h3>
+
+  <div class="button-container">
+    <button class="btn-3d" onclick="showDesigner()">FOR ME</button>
+    <div class="or-text">OR</div>
+    <button class="btn-3d" onclick="showDesigner()">TO SELL</button>
+  </div><br/>
+
+  <div class="modal-overlay" id="designerModal" onclick="closeDesigner(event)">
+  <div class="designer-ui" onclick="event.stopPropagation()">
+    <span class="close-btn" onclick="closeDesigner()">×</span>
+
+    <div class="upload-section">
+      <p>UPLOAD IMAGE</p>
+      <input type="file" accept="image/png, image/jpeg" /><br/>
+      <small>5 MB LIMIT<br/>PNG, JPG FORMAT ACCEPTED</small>
+    </div>
+
+    <div class="design-buttons">
+      <button onclick="changeView('front')" id="frontBtn" class="active">FRONT</button>
+      <button onclick="changeView('back')" id="backBtn">BACK</button>
+      <button onclick="changeView('left')" id="leftBtn">LEFT</button>
+      <button onclick="changeView('right')" id="rightBtn">RIGHT</button>
+    </div>
+
+    <div class="product-grid" id="productGrid">
+      <div class="product-card">
+        <div class="product-wrapper">
+        <img id="product1" src="img/products/front.webp" alt="Polo T-Shirt" />
+        <img class="overlay" id="overlay1" />
+        </div>
+        <p>POLO T-SHIRT</p>
+      </div>
+      <div class="product-card">
+        <div class="product-wrapper">
+        <img id="product2" src="img/products/front.webp" alt="Hoodie" />
+        <img class="overlay" id="overlay2" />
+        </div>
+        <p>HOODIE</p>
+      </div>
+      <div class="product-card">
+        <div class="product-wrapper">
+        <img id="product3" src="img/products/front.webp" alt="Round Neck T-Shirt" />
+        <img class="overlay" id="overlay3" />
+  </div>
+        <p>ROUND NECK T-SHIRT</p>
+      </div>
+      <div class="product-card">
+        <div class="product-wrapper">
+        <img id="product4" src="img/products/front.webp" alt="Cap" />
+        <img class="overlay" id="overlay4" />
+  </div>
+        <p>CAP</p>
+      </div>
+      <div class="product-card">
+        <div class="product-wrapper">
+        <img id="product5" src="img/products/front.webp" alt="Sweat Shirt" />
+        <img class="overlay" id="overlay5" />
+  </div>
+        <p>SWEAT SHIRT</p>
+      </div>
+        </div>
+    </div>
+    </div>
+
+    <section id="about-head" class="section-p1">
+        <img src="img/about/a6.jpg" alt="">
+        <div>
+            <h2>Who We Are?</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis auteirure
+                dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+            <abbr title="">Create stunning images with as much or as little control as you like thanks to a choice of Basic and Creative modes.</abbr>
+
+            <br><br>
+
+            <marquee bgcolor="#ccc" loop="-1" scrollamount="5" width="100%">Create stunning images with as much or as little control as you like thanks to a choice of Basic and Creative modes.
+            </marquee>
+        </div>
+    </section>
+
+    <section id="about-app" class="section-p1">
+        <h1>Download Our <a href="#">App</a> </h1>
+        <div class="video">
+            <video autoplay muted loop src="img/about/1.mp4"></video>
+        </div>
+    </section>
+
+    <h2 class="section-p1" style="margin-left: 239px;">Create and Sell Your Designs</h2>
+  <div class="modules-container">
+    <div class="module-card" style="transform: translate(0px, 48.7423px);
+    margin-top: -1px;">
+      <svg class="module-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path d="M22 6h-7a6 6 0 1 0 0 12h7v2a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v2zm-7 2h8v8h-8a4 4 0 1 1 0-8zm0 3v2h3v-2h-3z"/>
+      </svg>
+      <h3>1. Login</h3>
+      <p>Access your account to manage designs, track sales, and stay updated on your earnings.</p>
+    </div>
+
+    <div class="module-card" style="transform: translate(0px, 48.7423px);
+    margin-top: -1px;">
+      <svg class="module-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+      </svg>
+      <h3>2. Create</h3>
+      <p>Unleash your creativity by designing unique products. Turn your ideas into wearable art.</p>
+    </div>
+
+    <div class="module-card">
+      <svg class="module-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path d="M17.409 19c-.776-2.399-2.277-3.885-4.266-5.602A10.954 10.954 0 0 1 20 11V3h1.008c.548 0 .992.445.992.993v16.014a1 1 0 0 1-.992.993H2.992A.993.993 0 0 1 2 20.007V3.993A1 1 0 0 1 2.992 3H6V1h2v4H4v7c5.22 0 9.662 2.462 11.313 7h2.096zM18 1v4h-8V3h6V1h2zm-1.5 9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+      </svg>
+      <h3>3. Upload</h3>
+      <p>Easily upload your designs to our platform. Once approved, your products will be available for purchase.</p>
+    </div>
+
+    <div class="module-card">
+      <svg class="module-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path d="M10.9 2.1l9.899 1.415 1.414 9.9-9.192 9.192a1 1 0 0 1-1.414 0l-9.9-9.9a1 1 0 0 1 0-1.414L10.9 2.1zm2.828 8.486a2 2 0 1 0 2.828-2.829 2 2 0 0 0-2.828 2.829z"/>
+      </svg>
+      <h3>4. Earn</h3>
+      <p>Start earning with every sale! Your creativity and effort turn into real income.</p>
+    </div>
+  </div>
+
+
+
+    <section id="feature" class="section-p1">
+        <div class="fe-box">
+            <img src="img/features/f1.png" alt="">
+            <h6>Free Shipping</h6>
+        </div>
+        <div class="fe-box">
+            <img src="img/features/f2.png" alt="">
+            <h6>Online Order</h6>
+        </div>
+        <div class="fe-box">
+            <img src="img/features/f3.png" alt="">
+            <h6>Save Money</h6>
+        </div>
+        <div class="fe-box">
+            <img src="img/features/f4.png" alt="">
+            <h6>Promotions</h6>
+        </div>
+        <div class="fe-box">
+            <img src="img/features/f5.png" alt="">
+            <h6>Happy Sell</h6>
+        </div>
+        <div class="fe-box">
+            <img src="img/features/f6.png" alt="">
+            <h6>F24/7 Support</h6>
+        </div>
+    </section>
+
+    <section id="newsletter" class="section-p1 section-m1">
+        <div class="newstext">
+            <h4>Sign Up For Newsletters</h4>
+            <p>Get E-mail updates about our latest shop and <span>special offers.</span> </p>
+        </div>
+        <div class="form">
+            <input type="text" placeholder="Your email address">
+            <button class="normal">Sign Up</button>
+        </div>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="img/logo1.png" alt="" style="height: 70px;">
+            <h4>Contact</h4>
+            <p><strong>Address: </strong></p>
+            <p><strong>Phone:</strong></p>
+            <p><strong>Hours:</strong></p>
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-pinterest-p"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About Us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact Us</a>
+        </div>
+
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="#">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <img src="img/pay/app.jpg" alt="">
+                <img src="img/pay/play.jpg" alt="">
+            </div>
+            <p>Secured Payment Gateways </p>
+            <img src="img/pay/pay.png" alt="">
+        </div>
+
+        <div class="copyright">
+            <p>© 2025 Chhap — Made by Surendra</p>
+        </div>
+    </footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
